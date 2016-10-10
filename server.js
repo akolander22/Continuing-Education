@@ -11,6 +11,7 @@ app.get('/', function(request, response){
   response.sendFile(path.join(__dirname, 'public/views/index.html'));
 })
 
+app.use(express.static('public'));
 
 
 
