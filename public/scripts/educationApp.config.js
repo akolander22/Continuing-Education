@@ -14,6 +14,16 @@ angular.module('educationApp').config(function($routeProvider, $locationProvider
     controller: 'RegisterController',
     controllerAs: 'register'
   })
+  .when('/createlicense', {
+    templateUrl: 'views/createlicense.html',
+    controller: 'CreateLicenseController',
+    controllerAs: 'create'
+  })
+  .when('/mylicenses', {
+    templateUrl: 'views/mylicenses.html',
+    controller: 'MyLicensesContoller',
+    controllerAs: 'mylicenses'
+  })
   .when('/failure', {
     templateUrl: 'views/nope.html',
   })
