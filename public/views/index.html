@@ -10,12 +10,14 @@
   <script src="scripts/educationApp.module.js" charset="utf-8"></script>
   <script src="scripts/educationApp.config.js" charset="utf-8"></script>
   <script src="scripts/MainController.js" charset="utf-8"></script>
+  <script src="scripts/NavbarController.js" charset="utf-8"></script>
+  <script src="scripts/LoginController.js" charset="utf-8"></script>
+  <script src="scripts/RegisterController.js" charset="utf-8"></script>
   <base href="/" />
   <body>
-    <h1>Hello</h1>
+    <nav class="navbar"><div ng-include src="'views/navbar.html'"></div></nav>
     <div ng-view>
 
     </div>
-    {{3+3}}
   </body>
 </html>
