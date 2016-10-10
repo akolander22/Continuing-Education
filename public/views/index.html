@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html ng-app"EdApp">
+<html ng-app="educationApp">
   <head>
     <meta charset="utf-8">
     <title>Continuing Ed Application</title>
   </head>
+  <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
   <script src="vendors/angular/angular.min.js" charset="utf-8"></script>
+  <script src="vendors/angular-route/angular-route.min.js" charset="utf-8"></script>
+  <script src="scripts/educationApp.module.js" charset="utf-8"></script>
+  <script src="scripts/educationApp.config.js" charset="utf-8"></script>
+  <script src="scripts/MainController.js" charset="utf-8"></script>
+  <base href="/" />
   <body>
     <h1>Hello</h1>
+    <div ng-view>
+
+    </div>
     {{3+3}}
   </body>
 </html>
