@@ -86,9 +86,9 @@ passport.deserializeUser(function(id, done) {
 var mongoURI = ""
 if(process.env.MONGODB_URI != undefined){
     // mongoURI = "mongodb://heroku_29xg3qd4:lj98hmokv852dgl7jt4facmpee@ds153765.mlab.com:53765/heroku_29xg3qd4"
-    mongoURI: "mongodb://heroku_rn2qd1jg:fkiko2v3nv66obarucd8b925h3@ds053176.mlab.com:53176/heroku_rn2qd1jg";
+    mongoURI = "mongodb://heroku_rn2qd1jg:fkiko2v3nv66obarucd8b925h3@ds053176.mlab.com:53176/heroku_rn2qd1jg";
   } else {
-    mongodb:"localhost:27017/continuing_ed";
+    mongoURI = "mongodb://localhost:27017/continuing_ed";
   }
 var MongoDB = mongoose.connect(mongoURI).connection;
 
