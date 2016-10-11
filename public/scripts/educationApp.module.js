@@ -1,1 +1,1 @@
-angular.module('educationApp', ['ngRoute']);
+angular.module('educationApp', ['ngRoute', 'ngMaterial']);

@@ -4,9 +4,16 @@
     <meta charset="utf-8">
     <title>Continuing Ed Application</title>
   </head>
+  <link rel="stylesheet" href="styles/stylesheet.css">
   <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+
   <script src="vendors/angular/angular.min.js" charset="utf-8"></script>
   <script src="vendors/angular-route/angular-route.min.js" charset="utf-8"></script>
+  <script src="vendors/angular-material/angular-material.min.js" charset="utf-8"></script>
+  <script src="vendors/angular-messages/angular-messages.min.js" charset="utf-8"></script>
+  <script src="vendors/angular-animate/angular-animate.min.js" charset="utf-8"></script>
+  <script src="vendors/angular-aria/angular-aria.min.js" charset="utf-8"></script>
+
   <script src="scripts/educationApp.module.js" charset="utf-8"></script>
   <script src="scripts/educationApp.config.js" charset="utf-8"></script>
   <script src="scripts/MainController.js" charset="utf-8"></script>
@@ -17,9 +24,12 @@
   <script src="scripts/CreateLicenseController.js" charset="utf-8"></script>
   <base href="/" />
   <body>
-    <nav class="navbar"><div ng-include src="'views/navbar.html'"></div></nav>
-    <div ng-view>
+    <div class="MainContainer">
+      <nav class="navbar"><div ng-include src="'views/navbar.html'"></div></nav>
+      <div ng-view>
 
+      </div>
     </div>
+
   </body>
 </html>
