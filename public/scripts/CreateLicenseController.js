@@ -1,9 +1,8 @@
-angular.module('educationApp').controller('CreateLicenseController', function($http){
+angular.module('educationApp').controller('CreateLicenseController',['$http','$mdDialog', '$mdMedia', function($http,$mdDialog,$mdMedia){
   var vm = this;
 
 
-  vm.addLicense = function() {
-    console.log('button pressed');
+
   // var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'));
   // $mdDialog.show({
   //   controller: 'CreateLicenseController',
@@ -12,9 +11,6 @@ angular.module('educationApp').controller('CreateLicenseController', function($h
   //   fullscreen: useFullScreen,
   //   clickOutsideToClose: true,
   //   ariaLabel: 'Good',
-  //   locals: {
-  //     init: init
-  //   }
   // })
-}
-});
+
+}]);

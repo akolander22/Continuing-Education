@@ -1,4 +1,4 @@
-angular.module('educationApp').config(function($routeProvider, $locationProvider){
+angular.module('educationApp').config(function($routeProvider, $locationProvider,$mdThemingProvider){
   $routeProvider
   .when('/login', {
     templateUrl: 'views/login.html',
