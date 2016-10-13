@@ -1,2 +1,29 @@
-<h1>Create a New License</h1>
-<!-- <button type="button" class="btn btn-primary" ng-click="create.addLicense()">Button</button> -->
+<div class="licenseForm">
+<md-content layout-padding flex>
+  <h2 class="md-headline form-font underline">Creating a New License</h2>
+  <form name="licenseForm">
+    <md-input-container class="md-block">
+      <h4>License Name</h4>
+      <input requried name="licenseName" ng-model="create.name" aria-label="name"/>
+    </md-input-container>
+    <md-input-container class="md-block">
+      <h4>License Number</h4>
+      <input requried name="licenseNumber" ng-model="create.number" aria-label="number"/>
+    </md-input-container>
+      <div flex-gt-xs>
+        <h4>Due Date</h4>
+        <md-datepicker ng-model="create.duedate" md-placeholder="Enter date"></md-datepicker>
+      </div>
+    <md-input-container class="md-block">
+      <h4>Hours Required</h4>
+      <input requried name="licenseHoursReq" ng-model="create.hoursReq" aria-label="hoursReq"/>
+    </md-input-container>
+    <md-input-container class="md-block">
+      <h4>Hours Completed</h4>
+      <input requried name="licenseHours" ng-model="create.hours" aria-label="hours"/>
+    </md-input-container>
+
+    <md-button class="md-raised md-primary" type="submit"ng-click="create.submit()">Submit Form</md-button>
+  </form>
+</md-content>
+</div>
