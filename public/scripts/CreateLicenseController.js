@@ -12,8 +12,12 @@ angular.module('educationApp').controller('CreateLicenseController',['$http','$m
     sendData.hours = vm.hours;
 
     console.log(sendData);
-    $http.post()
-  }
+    $http.post('/license/saveLicense', sendData).then(function(response){
+      console.log('attempting to post', sendData);
+    }, function(response){
+      console.log('Fail');
+    })
+  };
 
 
 

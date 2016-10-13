@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt');
-var show = require('./license').schema;
+var license = require('./license').schema;
 
 
 var SALT_WORK_FACTOR = 10;
@@ -10,7 +10,7 @@ var SALT_WORK_FACTOR = 10;
 var UserSchema = new Schema({
    username: { type: String, required: true, index: { unique: true } },
    password: { type: String, required: true },
-  //  shows: [show], required: false
+   license: [license], required: false
 });
 
 
