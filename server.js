@@ -11,6 +11,8 @@ var app = express();
 var User = require('./models/user');
 var login = require('./routes/login');
 var register = require('./routes/register');
+var licenseRouter = require('./routes/license');
+var License = require('./models/license');
 
 app.get('/', function(request, response){
   response.sendFile(path.join(__dirname, 'public/views/index.html'));
@@ -31,6 +33,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 app.use('/login', login);
 app.use('/register', register);
+app.use('/license', licenseRouter);
 
 app.get('/logout', function(request, response){
   console.log('Logging out');
