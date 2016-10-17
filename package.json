@@ -22,6 +22,7 @@
     "express": "^4.14.0",
     "express-passport": "^0.1.0",
     "mongoose": "^4.6.3",
+    "ng-knob": "^1.0.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0"
   }

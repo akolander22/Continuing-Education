@@ -12,6 +12,23 @@ angular.module('educationApp').controller('MyLicensesContoller', function($http,
     }
     console.log(vm.myLicenseList);
 
+    vm.showLicense = function(license){
+      console.log('clicked the button');
+      var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'));
+      $mdDialog.show({
+        controller: 'LicenseController',
+        controllerAs: 'lcs',
+        templateUrl: 'views/license.html',
+        fullscreen: useFullScreen,
+        clickOutsideToClose: true,
+        ariaLabel: 'Good',
+        locals: {
+        license: license
+        }
+      })
+
+    }
+
     vm.newLicense = function(){
       console.log('hello');
       var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'));

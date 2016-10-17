@@ -1,1 +1,11 @@
+<div class="licenseList">
+  <md-content layout-padding flex>
+    <h3>License Name: {{lcs.license.name}}</h3>
+    <h3>License Number: {{lcs.license.number}}</h3>
+    <h4>Due Date: {{lcs.license.duedate | date : format : timezone}}</h4>
+    <h5>Hours Needed: {{lcs.license.hoursReq}}</h5>
+    <h5>Hours Completed: {{lcs.license.hours}}</h5>
+  </md-content>
 
+
+</div>
