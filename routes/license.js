@@ -22,8 +22,8 @@ router.post('/savelicense', function(request,response){
       if(err){
         console.log(err);
       };
-      // console.log('user inits', user.initiatives);
-      user.initiatives.push(newLicense);
+      console.log('user', user);
+      user.license.push(newLicense);
       user.save(function(err){
         if(err){
           console.log(err);
@@ -33,6 +33,10 @@ router.post('/savelicense', function(request,response){
 })
 
 
+router.get('/mylicenses', function(request,response){
+  var user = request.user;
+  response.send(user);
+})
 
 
 

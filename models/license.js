@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var licenseSchema = new Schema({
   name: String,
   number: String,
-  date: Date,
+  duedate: Date,
   hoursReq: Number,
   hours: Number
 });

@@ -19,7 +19,7 @@ angular.module('educationApp').controller('LoginController', function($http, $lo
     $rootScope.username = vm.username;
     $rootScope.loggedIn = true;
 
-    $location.path('/search');
+    $location.path('/mylicenses');
   };
 
   function handleFailure(response){

@@ -10,7 +10,7 @@ angular.module('educationApp').controller('CreateLicenseController',['$http','$m
     sendData.duedate = vm.duedate;
     sendData.hoursReq = vm.hoursReq;
     sendData.hours = vm.hours;
-
+    $mdDialog.hide();
     console.log(sendData);
     $http.post('/license/savelicense', sendData).then(function(response){
       console.log('attempting to post', sendData);
