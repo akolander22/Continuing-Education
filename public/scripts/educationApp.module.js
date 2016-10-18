@@ -1,1 +1,1 @@
-angular.module('educationApp', ['ngRoute', 'ngMaterial']);
+angular.module('educationApp', ['ngRoute', 'ngMaterial', 'ui.knob']);

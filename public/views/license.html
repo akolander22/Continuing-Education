@@ -1,11 +1,17 @@
-<div class="licenseList">
+<div class="licenseList" flex layout="row">
   <md-content layout-padding flex>
     <h3>License Name: {{lcs.license.name}}</h3>
     <h3>License Number: {{lcs.license.number}}</h3>
     <h4>Due Date: {{lcs.license.duedate | date : format : timezone}}</h4>
+    <md-input-container>
+      <input ng-model="lcs.hours" type="number" min="0" max="{{lcs.hoursReq}}" step=".25" />
+    </md-input-container>
     <h5>Hours Needed: {{lcs.license.hoursReq}}</h5>
     <h5>Hours Completed: {{lcs.license.hours}}</h5>
   </md-content>
-
+  <div class="knob" layout-padding flex>
+    <ui-knob value="lcs.value" options="lcs.options"></ui-knob>
+    <md-button class="md-raised md-warning" ng-click="lcs.save()">Button</md-button>
+  </div>
 
 </div>
