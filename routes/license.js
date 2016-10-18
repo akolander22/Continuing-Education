@@ -37,18 +37,18 @@ router.post('/editlicense', function(request,response){
   var id = data.id;
   console.log(data);
   User.findOne({"license._id": id}, function(err, user){
-  currentLicense = user.license.id(id);
-  console.log(currentLicense);
-  currentLicense.hoursReq = data.hoursReq;
-  currentLicense.hours = data.hours;
-  user.save(function(err){
-    if(err){
-      console.log(err);
-      response.sendStatus(500);
-    }else{
-      response.sendStatus(200);
-    }
-  })
+    currentLicense = user.license.id(id);
+    console.log(currentLicense);
+    currentLicense.hoursReq = data.hoursReq;
+    currentLicense.hours = data.hours;
+    user.save(function(err){
+      if(err){
+        console.log(err);
+        response.sendStatus(500);
+      }else{
+        response.sendStatus(200);
+      }
+    })
   })
 })
 
