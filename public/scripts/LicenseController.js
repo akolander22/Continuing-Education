@@ -4,7 +4,6 @@ angular.module('educationApp').controller('LicenseController', function($http,li
   vm.license = license;
   console.log(vm.license);
 
-  vm.value = license.hours;
   vm.options = {
     bgColor: '#2C3E50',
     trackWidth: 50,
@@ -15,8 +14,19 @@ angular.module('educationApp').controller('LicenseController', function($http,li
   };
 
   vm.save = function(){
-    console.log('clicked save', vm.value);
+    console.log('license.hours', license.hours);
+    console.log('vm', vm.license.hours);
 
+    var sendData = {};
+    sendData.hoursReq = vm.license.hoursReq;
+    sendData.hours = vm.license.hours;
+    sendData.id = vm.license._id;
+    console.log(sendData);
+    $http.post('/license/editlicense', sendData).then(function(response){
+      console.log('attempting to post', sendData);
+    }, function(response){
+      console.log('Fail');
+    })
   }
 
 })
