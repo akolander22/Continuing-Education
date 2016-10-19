@@ -2,22 +2,25 @@
   <md-content layout-padding flex>
     <h4>License Name: {{lcs.license.name}}</h4>
     <h4>License Number: {{lcs.license.number}}</h4>
-    <h4>Due Date: {{lcs.license.duedate | date : format : timezone}}</h4>
+    <!-- <h4>Due Date: {{lcs.license.duedate | date : format : timezone}}</h4> -->
+    <div flex-gt-xs>
+      <h4>Due Date: </h4><md-datepicker ng-model="lcs.license.duedate" md-placeholder="{{lcs.license.duedate | date : format : timezone}}"></md-datepicker>
+    </div>
     <md-input-container>
       <h5>Hours Needed: </h5>
       <input flex type="number" ng-model="lcs.license.hoursReq" aria-label="hoursReq" />
      </md-input-container>
-    <!-- <h5>Hours Needed: {{lcs.license.hoursReq}}</h5> -->
     <md-input-container>
       <h5>Hours Completed:</h5>
       <input flex type="number" ng-model="lcs.license.hours" aria-label="hours" />
     </md-input-container>
-    <!-- <h5>Hours Completed: {{lcs.license.hours}}</h5> -->
   </md-content>
   <div class="knob" layout-padding flex>
     <ui-knob value="lcs.license.hours" options="lcs.options"></ui-knob>
     <div>
       <md-button class="md-raised md-warning" ng-click="lcs.save()">Update</md-button>
+      <!-- <button class="btn btn-warn">Delete License</button> -->
+      <md-button class="md-raised md-warn" ng-click="lcs.delete()">Delete License</md-button>
     </div>
   </div>
 </div>

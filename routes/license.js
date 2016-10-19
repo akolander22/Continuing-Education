@@ -41,6 +41,7 @@ router.post('/editlicense', function(request,response){
     console.log(currentLicense);
     currentLicense.hoursReq = data.hoursReq;
     currentLicense.hours = data.hours;
+    currentLicense.duedate = data.duedate;
     user.save(function(err){
       if(err){
         console.log(err);
@@ -58,7 +59,27 @@ router.get('/mylicenses', function(request,response){
   response.send(user);
 })
 
+router.delete('/delete/:id', function(request,response){
+  console.log(request.params);
+  // console.log(request.user);
 
+  var user = request.user;
+  var id = request.params.id;
+  console.log(id);
+
+  User.findById(request.user.id, function(err, user){
+    if(err){
+      console.log(err);
+    }
+    user.license.id(id).remove();
+    user.save(function(err){
+      if(err){
+        console.log(err);
+      }
+    })
+  })
+
+})
 
 
 
