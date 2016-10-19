@@ -21,7 +21,11 @@ angular.module('educationApp').controller('LicenseController', function($http,li
     sendData.hoursReq = vm.license.hoursReq;
     sendData.hours = vm.license.hours;
     sendData.duedate = vm.license.duedate;
+    sendData.name = vm.license.name;
+    sendData.number = vm.license.number;
+    
     sendData.id = vm.license._id;
+
     console.log(sendData);
 
 

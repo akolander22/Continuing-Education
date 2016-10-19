@@ -1,7 +1,15 @@
 <div class="licenseList" flex layout="row">
   <md-content layout-padding flex>
-    <h4>License Name: {{lcs.license.name}}</h4>
-    <h4>License Number: {{lcs.license.number}}</h4>
+    <md-input-container>
+      <h4>License Name: </h4>
+      <input flex type="string" ng-model="lcs.license.name" aria-label="name" />
+    </md-input-container>
+    <md-input-container>
+      <h4>License Number: </h4>
+      <input flex type="string" ng-model="lcs.license.number" aria-label="number" />
+    </md-input-container>
+    <!-- <h4>License Name: {{lcs.license.name}}</h4>
+    <h4>License Number: {{lcs.license.number}}</h4> -->
     <!-- <h4>Due Date: {{lcs.license.duedate | date : format : timezone}}</h4> -->
     <div flex-gt-xs>
       <h4>Due Date: </h4><md-datepicker ng-model="lcs.license.duedate" md-placeholder="{{lcs.license.duedate | date : format : timezone}}"></md-datepicker>

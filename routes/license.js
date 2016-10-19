@@ -42,6 +42,8 @@ router.post('/editlicense', function(request,response){
     currentLicense.hoursReq = data.hoursReq;
     currentLicense.hours = data.hours;
     currentLicense.duedate = data.duedate;
+    currentLicense.name = data.name;
+    currentLicense.number = data.number;
     user.save(function(err){
       if(err){
         console.log(err);
