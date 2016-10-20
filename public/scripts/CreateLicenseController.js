@@ -1,4 +1,4 @@
-angular.module('educationApp').controller('CreateLicenseController',['$http','$mdDialog', '$mdMedia', function($http,$mdDialog,$mdMedia){
+angular.module('educationApp').controller('CreateLicenseController',['$http','$mdDialog', '$mdMedia', function($http,$mdDialog,$mdMedia,$mdToast){
   var vm = this;
 
   vm.submit = function(){
@@ -14,6 +14,13 @@ angular.module('educationApp').controller('CreateLicenseController',['$http','$m
     console.log(sendData);
     $http.post('/license/savelicense', sendData).then(function(response){
       console.log('attempting to post', sendData);
+      $mdToast.show({
+          position: "top left",
+          template: function(){
+            if (response.status == 401){"<md-toast>Successfully Created a New License!</md-toast>"}
+            else {"<md-toast>There was a problem there...</md-toast>"}
+          }
+        })
     }, function(response){
       console.log('Fail');
     })

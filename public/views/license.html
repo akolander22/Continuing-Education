@@ -12,7 +12,10 @@
     <h4>License Number: {{lcs.license.number}}</h4> -->
     <!-- <h4>Due Date: {{lcs.license.duedate | date : format : timezone}}</h4> -->
     <div flex-gt-xs>
-      <h4>Due Date: </h4><md-datepicker ng-model="lcs.license.duedate" md-placeholder="{{lcs.license.duedate | date : format : timezone}}"></md-datepicker>
+      <h4>Due Date: </h4><md-datepicker ng-model="lcs.dt" md-placeholder="{{lcs.license.duedate | date : format : timezone}}"></md-datepicker>
+    </div>
+    <div id="countdown">
+
     </div>
     <md-input-container>
       <h5>Hours Needed: </h5>
