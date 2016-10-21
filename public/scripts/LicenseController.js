@@ -71,6 +71,7 @@ angular.module('educationApp').controller('LicenseController', function($http,li
             else {"<md-toast>There was a problem there...</md-toast>"}
           }
         })
+        $mdDialog.hide();
     }, function(response){
       console.log('Fail');
     })
