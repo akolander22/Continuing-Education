@@ -8,9 +8,6 @@
       <h4>License Number: </h4>
       <input flex type="string" ng-model="lcs.license.number" aria-label="number" />
     </md-input-container>
-    <!-- <h4>License Name: {{lcs.license.name}}</h4>
-    <h4>License Number: {{lcs.license.number}}</h4> -->
-    <!-- <h4>Due Date: {{lcs.license.duedate | date : format : timezone}}</h4> -->
     <div flex-gt-xs>
       <h4>Due Date: </h4><md-datepicker ng-model="lcs.dt" md-placeholder="{{lcs.license.duedate | date : format : timezone}}"></md-datepicker>
     </div>
@@ -30,7 +27,6 @@
     <ui-knob value="lcs.license.hours" options="lcs.options"></ui-knob>
     <div>
       <md-button class="md-raised md-warning" ng-click="lcs.save()">Update</md-button>
-      <!-- <button class="btn btn-warn">Delete License</button> -->
       <md-button class="md-raised md-warn" ng-click="lcs.delete()">Delete License</md-button>
     </div>
   </div>

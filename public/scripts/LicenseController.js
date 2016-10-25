@@ -23,13 +23,13 @@ angular.module('educationApp').controller('LicenseController', function($http,li
         }
         var days = Math.floor(distance / _day);
         var hours = Math.floor((distance % _day) / _hour);
-        var minutes = Math.floor((distance % _hour) / _minute);
-        var seconds = Math.floor((distance % _minute) / _second);
+        // var minutes = Math.floor((distance % _hour) / _minute);
+        // var seconds = Math.floor((distance % _minute) / _second);
 
         document.getElementById('countdown').innerHTML = days + 'days ';
         document.getElementById('countdown').innerHTML += hours + 'hrs ';
-        document.getElementById('countdown').innerHTML += minutes + 'mins ';
-        document.getElementById('countdown').innerHTML += seconds + 'secs';
+        // document.getElementById('countdown').innerHTML += minutes + 'mins ';
+        // document.getElementById('countdown').innerHTML += seconds + 'secs';
     }
 
     timer = setInterval(showRemaining, 1000);
@@ -38,17 +38,16 @@ angular.module('educationApp').controller('LicenseController', function($http,li
   vm.dt = new Date(vm.license.duedate);
 
   vm.options = {
-    bgColor: '#616161',
+    bgColor: '#4E342E',
     trackWidth: 50,
     barWidth: 30,
-    barColor: '#18FFFF',
+    barColor: '#10a323',
     textColor: '#eee',
     max: license.hoursReq
   };
 
   vm.save = function(){
-    console.log('license.hours', license.hours);
-    console.log('license',license);
+
 
     var sendData = {};
     sendData.hoursReq = vm.license.hoursReq;
@@ -59,11 +58,9 @@ angular.module('educationApp').controller('LicenseController', function($http,li
 
     sendData.id = vm.license._id;
 
-    console.log(sendData);
 
 
     $http.post('/license/editlicense', sendData).then(function(response){
-      console.log('attempting to post', sendData);
       $mdToast.show({
           position: "top left",
           template: function(){
@@ -80,7 +77,6 @@ angular.module('educationApp').controller('LicenseController', function($http,li
 
 
   vm.delete = function(){
-    console.log('clicked delete',license._id);
 
     $http.delete('/license/delete/' + license._id).then(function(response){
     }, function(response){
