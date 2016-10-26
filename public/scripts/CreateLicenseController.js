@@ -2,7 +2,6 @@ angular.module('educationApp').controller('CreateLicenseController',['$http','$m
   var vm = this;
 
   vm.submit = function(){
-    console.log('hit submit', vm.duedate);
 
     var sendData = {};
     sendData.name = vm.name;

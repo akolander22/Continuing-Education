@@ -5,15 +5,13 @@ angular.module('educationApp').controller('MyLicensesContoller', function($http,
   $http.get('/license/mylicenses').then(function(response){
     var licenseList = response.data.license
     vm.myLicenseList = [];
-    console.log('license response', licenseList);
 
     for (var i = 0; i < licenseList.length; i++) {
       vm.myLicenseList.push(licenseList[i]);
     }
-    console.log(vm.myLicenseList);
 
     vm.showLicense = function(license){
-      console.log('clicked the button');
+      // console.log('clicked the button');
       var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'));
       $mdDialog.show({
         controller: 'LicenseController',
@@ -30,7 +28,6 @@ angular.module('educationApp').controller('MyLicensesContoller', function($http,
     }
 
     vm.newLicense = function(){
-      console.log('hello');
       var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'));
       $mdDialog.show({
         controller: 'CreateLicenseController',
