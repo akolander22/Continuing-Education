@@ -3,7 +3,10 @@ angular.module('educationApp').controller('LicenseController', function($http,li
 
   vm.license = license;
 
-  var end = new Date(vm.license.duedate);
+  getTime = function(){
+    vm.dt = new Date(vm.license.duedate);
+
+    var end = new Date(vm.license.duedate);
 
     var _second = 1000;
     var _minute = _second * 60;
@@ -33,12 +36,14 @@ angular.module('educationApp').controller('LicenseController', function($http,li
     }
 
     timer = setInterval(showRemaining, 1000);
+  }
+
+  // getTime();
 
 
-  vm.dt = new Date(vm.license.duedate);
 
   vm.options = {
-    bgColor: '#4E342E',
+    bgColor: '#646368',
     trackWidth: 50,
     barWidth: 30,
     barColor: '#10a323',
@@ -91,6 +96,7 @@ angular.module('educationApp').controller('LicenseController', function($http,li
       })
       // $window.location.href= "/";
     $mdDialog.hide();
+    
   }
 
 })
