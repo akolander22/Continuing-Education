@@ -2,9 +2,10 @@ angular.module('educationApp').controller('LicenseController', function($http,li
   var vm = this;
 
   vm.license = license;
+  vm.dt = new Date(vm.license.duedate);
+
 
   getTime = function(){
-    vm.dt = new Date(vm.license.duedate);
 
     var end = new Date(vm.license.duedate);
 
@@ -96,7 +97,7 @@ angular.module('educationApp').controller('LicenseController', function($http,li
       })
       // $window.location.href= "/";
     $mdDialog.hide();
-    
+
   }
 
 })
