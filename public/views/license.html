@@ -9,12 +9,12 @@
       <input flex type="string" ng-model="lcs.license.number" aria-label="number" />
     </md-input-container>
     <div flex-gt-xs>
-      <h4>Due Date: </h4><md-datepicker ng-model="lcs.dt" md-placeholder="{{lcs.license.duedate | date : format : timezone}}"></md-datepicker>
+      <h4>Due Date: </h4><md-datepicker ng-model="lcs.license.duedate" md-placeholder="{{lcs.license.duedate | date : format : timezone}}"></md-datepicker>
     </div>
     <h4>License Due in: </h4>
-    <div id="countdown">
+    <p id="countdown" >
 
-    </div>
+    </p>
     <md-input-container>
       <h5>Hours Needed: </h5>
       <input flex type="number" ng-model="lcs.license.hoursReq" aria-label="hoursReq" />

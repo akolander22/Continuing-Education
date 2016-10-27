@@ -2,13 +2,13 @@ angular.module('educationApp').controller('LicenseController', function($http,li
   var vm = this;
 
   vm.license = license;
-  vm.dt = new Date(vm.license.duedate);
-
+  // vm.dt = new Date(vm.license.duedate);
+  // console.log(vm.dt);
 
   getTime = function(){
 
     var end = new Date(vm.license.duedate);
-
+    console.log(end);
     var _second = 1000;
     var _minute = _second * 60;
     var _hour = _minute * 60;
@@ -25,21 +25,22 @@ angular.module('educationApp').controller('LicenseController', function($http,li
 
             return;
         }
-        var days = Math.floor(distance / _day);
-        var hours = Math.floor((distance % _day) / _hour);
-        // var minutes = Math.floor((distance % _hour) / _minute);
-        // var seconds = Math.floor((distance % _minute) / _second);
-
-        document.getElementById('countdown').innerHTML = days + 'days ';
-        document.getElementById('countdown').innerHTML += hours + 'hrs ';
-        // document.getElementById('countdown').innerHTML += minutes + 'mins ';
-        // document.getElementById('countdown').innerHTML += seconds + 'secs';
+         vm.days = Math.floor(distance / _day);
+         vm.hours = Math.floor((distance % _day) / _hour);
+         vm.minutes = Math.floor((distance % _hour) / _minute);
+         vm.seconds = Math.floor((distance % _minute) / _second);
+         console.log(vm.days)
+        
+        document.getElementById('countdown').innerHTML = vm.days + 'days ';
+        document.getElementById('countdown').innerHTML += vm.hours + 'hrs ';
+        document.getElementById('countdown').innerHTML += vm.minutes + 'mins ';
+        document.getElementById('countdown').innerHTML += vm.seconds + 'secs';
     }
 
-    timer = setInterval(showRemaining, 1000);
+    timer = setInterval(showRemaining, 10000);
   }
 
-  // getTime();
+  getTime();
 
 
 
@@ -58,7 +59,7 @@ angular.module('educationApp').controller('LicenseController', function($http,li
     var sendData = {};
     sendData.hoursReq = vm.license.hoursReq;
     sendData.hours = vm.license.hours;
-    sendData.duedate = vm.dt;
+    sendData.duedate = vm.license.duedate;
     sendData.name = vm.license.name;
     sendData.number = vm.license.number;
 
