@@ -8,7 +8,7 @@ angular.module('educationApp').controller('LicenseController', function($http,li
   getTime = function(){
 
     var end = new Date(vm.license.duedate);
-    console.log(end);
+    // console.log(end);
     var _second = 1000;
     var _minute = _second * 60;
     var _hour = _minute * 60;
@@ -29,8 +29,7 @@ angular.module('educationApp').controller('LicenseController', function($http,li
          vm.hours = Math.floor((distance % _day) / _hour);
          vm.minutes = Math.floor((distance % _hour) / _minute);
          vm.seconds = Math.floor((distance % _minute) / _second);
-         console.log(vm.days)
-        
+
         document.getElementById('countdown').innerHTML = vm.days + 'days ';
         document.getElementById('countdown').innerHTML += vm.hours + 'hrs ';
         document.getElementById('countdown').innerHTML += vm.minutes + 'mins ';
