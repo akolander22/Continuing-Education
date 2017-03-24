@@ -1,7 +1,7 @@
 
 <div class="license">
-  <h1>Here are all of my licenses</h1>
-  <md-button ng-repeat="license in mylicenses.myLicenseList" class="md-raised"ng-click="mylicenses.showLicense(license)">{{license.name}}</md-button>
+  <h1>Active Licenses</h1>
+  <md-button ng-repeat="license in mylicenses.myLicenseList" class="md-raised"ng-click="mylicenses.showLicense(license)">{{license.name}} {{license.duedate | date : format : timezone}}</md-button>
   <h1>Create a New License</h1>
   <md-content>
     <md-button ng-click="mylicenses.newLicense()" class="md-raised md-primary">Make a License</md-button>
