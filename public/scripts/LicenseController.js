@@ -2,8 +2,6 @@ angular.module('educationApp').controller('LicenseController', function($http,li
   var vm = this;
 
   vm.license = license;
-  // vm.dt = new Date(vm.license.duedate);
-  // console.log(vm.dt);
 
   getTime = function(){
 
@@ -30,10 +28,10 @@ angular.module('educationApp').controller('LicenseController', function($http,li
          vm.minutes = Math.floor((distance % _hour) / _minute);
          vm.seconds = Math.floor((distance % _minute) / _second);
 
-        document.getElementById('countdown').innerHTML = vm.days + 'days ';
-        document.getElementById('countdown').innerHTML += vm.hours + 'hrs ';
-        document.getElementById('countdown').innerHTML += vm.minutes + 'mins ';
-        document.getElementById('countdown').innerHTML += vm.seconds + 'secs';
+        document.getElementById('countdown').innerHTML = vm.days + ' days ';
+        document.getElementById('countdown').innerHTML += vm.hours + ' hrs ';
+        document.getElementById('countdown').innerHTML += vm.minutes + ' mins ';
+        document.getElementById('countdown').innerHTML += vm.seconds + ' secs';
     }
 
     timer = setInterval(showRemaining, 10000);
@@ -49,7 +47,7 @@ angular.module('educationApp').controller('LicenseController', function($http,li
     barWidth: 30,
     barColor: '#10a323',
     textColor: '#eee',
-    max: license.hoursReq
+    max: license.hoursReq,
   };
 
   vm.save = function(){
